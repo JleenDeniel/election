@@ -5,49 +5,126 @@
 	<title>Election</title>
 	<link rel="stylesheet" href="./style/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4 col-lg-3 navbar-container bg-light">
-        <!-- Вертикальное меню -->
-        <nav class="navbar navbar-expand-md navbar-light">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar">
-            <!-- Пункты вертикального меню -->
-            <ul class="navbar-nav">
-              <li class="nav-item">
-              <a class="nav-link" href="#link-1">Ссылка 1</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#link-2">Ссылка 2</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#link-3">Ссылка 3</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#link-4">Ссылка 4</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#link-5">Ссылка 5</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="col-md-8 col-lg-9 content-container" style="background-color: #ffe0b2">
-        <!-- Основной контент страницы  -->
-      </div>
-    </div>
-  </div>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="menu">
+	  <a class="navbar-brand" href="#">ОПРОСЫ</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	  </button>
 
-<script src="./src/code.js"></script>
+	  <div class="collapse navbar-collapse" id="navbarCollapse">
+	    <ul class="navbar-nav ml-auto sidenav nav flex-column" id="navAccordion">
+	      <li class="nav-item ml-2">
+	        <a class="nav-link" href="#" id="enter_link">Войти</a>
+	      </li>
+	      <li class="nav-item ml-2" id="create_survey_btn">
+	        <a class="nav-link" href="#">Создать опрос</a>
+	      </li>
+	      <li class="nav-item">
+	      	<div class="row" id="search_menu_item">
+		        <div class="input-group col-md-12">
+	            <input class="form-control py-2 border-right-0 border" type="search" value="search">
+	            <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border" id="btn_search" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+		        </div>
+    			</div>
+	      </li>
+	      <!-- список активных опросов -->
+	      <li class="nav-item" id="nav_list"> 
+	      	<div class="col-md-12">
+			     	<ul class="nav nav-pills nav-stacked list_of_surveys">
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опросgggggggg</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			       	<li class="nav-item">
+			         	<a class="nav-link" href="#">Публичный опрос</a>
+			       	</li>
+			     	</ul>
+					</div>
+	      </li>
+	      <li class="nav-item nav_item_menu_footer">
+	      	<a class="nav-link" id="info_menu_footer" href="#">Info</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<main class="content-wrapper">  
+	</main>
+
+	<div id="field_login">
+		<div class="login_register_div bg-dark">
+			<button id="close_btn">✕</button>
+			<div id="center">
+				<h2>Вход</h2>
+				<form action="" id="data_form">
+					<input type="email" placeholder="example@mail.ru" id="email_input">
+					<input type="password" placeholder="пароль" id="password_input">
+				</form>
+				<!-- нажимаешь на кнопку и данные передаются серверу -->
+				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
+				<a href="#" class="link_reg_forgot" id="forgot_password">Забыли пароль?</a>
+				<a href="#" class="link_reg_forgot" id="registration">Регистрация</a>
+			</div>
+		</div>
+	</div>
+	
+	<script src="./src/login.js"></script>
+	<script src="./src/list.js"></script>
+	<script src="./src/menu.js"></script>
 </body>
 </html>

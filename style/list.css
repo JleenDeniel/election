@@ -1,0 +1,14 @@
+.list_of_surveys{
+	height: 680px;
+	overflow-y: scroll;
+}
+
+.list_of_surveys::-webkit-scrollbar{ 
+	width: 0; 
+}
+
+#nav_list{
+	margin: 0 auto;
+	padding-bottom: 5%;
+	border-bottom: 2px solid firebrick;
+}
