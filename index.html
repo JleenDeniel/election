@@ -29,7 +29,7 @@
 	      <li class="nav-item">
 	      	<div class="row" id="search_menu_item">
 		        <div class="input-group col-md-12">
-	            <input class="form-control py-2 border-right-0 border" type="search" value="search">
+	            <input class="form-control py-2 border-right-0 border" type="search" value="search" id="search_input">
 	            <span class="input-group-append">
                 <button class="btn btn-outline-secondary border-left-0 border" id="btn_search" type="button">
                   <i class="fa fa-search"></i>
@@ -112,13 +112,29 @@
 			<div id="center">
 				<h2>Вход</h2>
 				<form action="" id="data_form">
-					<input type="email" placeholder="example@mail.ru" id="email_input">
+					<input type="text" placeholder="имя пользователя или email" id="email_input">
 					<input type="password" placeholder="пароль" id="password_input">
 				</form>
 				<!-- нажимаешь на кнопку и данные передаются серверу -->
 				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
 				<a href="#" class="link_reg_forgot" id="forgot_password">Забыли пароль?</a>
 				<a href="#" class="link_reg_forgot" id="registration">Регистрация</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="registration_field">
+		<div class="bg-dark register_div">
+			<button id="close_btn_reg">✕</button>
+			<div id="center_reg">
+				<h2>Регистрация</h2>
+				<form action="" id="register_data">
+					<input type="text" placeholder="имя пользователя" id="username_nick">
+					<input type="email" placeholder="example@mail.ru" id="email_input_reg">
+					<input type="password" placeholder="пароль" id="password_input_reg">
+					<input type="password" placeholder="подтвердите пароль" id="password_confirm">
+				</form>
+				<button type="submit" form="data_form" id="submit_btn_reg">Зарегистрироваться</button>
 			</div>
 		</div>
 	</div>
