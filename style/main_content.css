@@ -1,0 +1,11 @@
+.main_content{
+	float: right;
+	height: 100vh;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	opacity: 0.95;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url('C:/Users/vmaxi/Desktop/election/frontend/img/back.png');
+}

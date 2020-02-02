@@ -55,6 +55,10 @@
 	color: lightgray;
 }
 
+#submit_btn_reg:hover{
+	border: 0.5px solid grey;
+}
+
 #registration_field{
 	background-color: rgba(0, 0, 0, 0.7);
 	display: none;
