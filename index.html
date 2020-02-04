@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Election</title>
-	<link rel="stylesheet" href="./static/style/main.css">
+	<link rel="stylesheet" href="/style/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -134,9 +134,9 @@
 			<button id="close_btn">✕</button>
 			<div id="center">
 				<h2>Вход</h2>
-				<form action="" id="data_form">
-					<input type="text" placeholder="имя пользователя или email" id="email_input">
-					<input type="password" placeholder="пароль" id="password_input">
+				<form action="/login" id="data_form" method="post">
+					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName">
+					<input type="password" placeholder="пароль" id="password_input" name="userPassword">
 				</form>
 				<!-- нажимаешь на кнопку и данные передаются серверу -->
 				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
@@ -153,7 +153,7 @@
 				<h2>Регистрация</h2>
 				<form action="" id="register_data">
 					<input type="text" placeholder="имя пользователя" id="username_nick">
-					<input type="email" placeholder="example@mail.ru" id="email_input_reg">
+					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="kek">
 					<input type="password" placeholder="пароль" id="password_input_reg">
 					<input type="password" placeholder="подтвердите пароль" id="password_confirm">
 				</form>
@@ -162,9 +162,9 @@
 		</div>
 	</div>
 	
-	<script src="./static/src/login.js"></script>
-	<script src="./static/src/list.js"></script>
-	<script src="./static/src/menu.js"></script>
-	<script src="./static/src/builder.js"></script>
+	<script src="/src/login.js"></script>
+	<script src="/src/list.js"></script>
+	<script src="/src/menu.js"></script>
+	<script src="/src/builder.js"></script>
 </body>
 </html>

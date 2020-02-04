@@ -89,13 +89,12 @@ function form_send(){
 	};
 	// let json_data = JSON.stringify(form_data);
 	
-	console.log(JSON.stringify(form_data));
+	// console.log(JSON.stringify(form_data));
 
-	// login_form.action = 'https://google.com/search';
 	// $.ajax({
-	//   url: 'localhost:5000/login',
+	//   url: 'http://localhost:3000/login',
 	//   type: 'post',
-	//   data: $data,
+	//   data: JSON.stringify(form_data),
 	//   success: function(result) {
 	//     // действия при получения ответа (result) от сервера
 	//   }
