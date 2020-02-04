@@ -19,10 +19,11 @@ body{
 
 @media (min-width: 992px){
   .sidenav{
+    opacity: 0.9;
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 350px;
     height: calc(100vh - 3.5rem);
     margin-top: 3.5rem;
     background: #343a40;
@@ -38,8 +39,12 @@ body{
     margin-left: 230px;
   }
 
+  .navbar-expand-lg{
+    opacity: 0.9;
+  }
+
   .nav-item a{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   
   #create_survey_btn{
@@ -51,7 +56,7 @@ body{
   #search_menu_item{
     margin: 0 auto;
     padding: 5% 0;
-    border-top: 2px solid firebrick; 
+    border-top: 2px solid white; 
   }
 
   #info_menu_footer{
@@ -75,5 +80,5 @@ body{
 }
 
 #btn_search{
-  background-color: lightgray;
+  background-color: white;
 }

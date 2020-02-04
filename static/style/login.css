@@ -3,13 +3,14 @@
 	width: 20%;
 	margin: 14% auto;
 	border-radius: 18px;
-	border: 1px solid firebrick;
+	border: 1px solid #007BFF;
 	opacity: 1;
 }
 
 .login_register_div h2{
 	text-align: center;
-	color: lightgray;
+	margin-left: 9.5%;
+	color: black;
 	margin-bottom: 16%;
 	font-weight: 100;
 }
@@ -23,7 +24,7 @@
 	font-size: 1.4rem;
 	border-radius: 10px;
 	font-weight: 100;
-	border: 0.9px solid firebrick;
+	border: 0.9px solid #007BFF;
 }
 
 #center{
@@ -43,13 +44,13 @@
 	height: 50px;
 	font-size: 1.4rem;
 	border-radius: 23px;
-	background-color: firebrick;
+	background-color: #007BFF;
 	border: none;
-	color: lightgray;
+	color: white;
 }
 
 #submit_btn:hover{
-	border: 0.5px solid grey;
+	border: 0.5px solid white;
 }
 
 #field_login{
@@ -67,8 +68,8 @@
 .link_reg_forgot{
 	display: inline-block;
 	text-decoration: none;
-	color: lightgray;
-	opacity: 0.5;
+	color: black;
+	opacity: 0.9;
 }
 
 #forgot_password{
@@ -85,8 +86,8 @@
 
 .link_reg_forgot:hover{
 	text-decoration: none;
-	opacity: 0.8;
-	color: lightgray;
+	opacity: 1;
+	color: black;
 }
 
 #close_btn{

@@ -1,0 +1,24 @@
+.build_field{
+	display: inline-block;
+	height: 800px;
+	width: 1000px;
+	border: 2px solid firebrick;
+	margin: 6% auto 0 19%;
+	color: lightgray;
+	border-radius: 18px;
+}
+
+.build_field h2{
+	text-align: center;
+}
+
+.castomaizer{
+	height: 800px;
+	width: 420px;
+	float: right;
+	left: 3%;
+	margin: 6% auto 0 3%;
+	margin-right: 3%;
+	border: 2px solid firebrick;
+	border-radius: 18px;
+}

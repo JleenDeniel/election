@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Election</title>
-	<link rel="stylesheet" href="./style/main.css">
+	<link rel="stylesheet" href="./static/style/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -12,19 +12,22 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="menu">
-	  <a class="navbar-brand" href="#">ОПРОСЫ</a>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" id="menu">
+	  <a class="navbar-brand text-light" href="#">ОПРОСЫ</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 	  </button>
 
 	  <div class="collapse navbar-collapse" id="navbarCollapse">
-	    <ul class="navbar-nav ml-auto sidenav nav flex-column" id="navAccordion">
+	    <ul class="navbar-nav ml-auto sidenav nav flex-column bg-primary" id="navAccordion">
 	      <li class="nav-item ml-2">
-	        <a class="nav-link" href="#" id="enter_link">Войти</a>
+	        <a class="nav-link text-light" href="#" id="enter_link">Войти</a>
+	      </li>
+	      <li class="nav-item ml-2">
+	        <a class="nav-link text-light" href="#" id="personal">Личный кабинет</a>
 	      </li>
 	      <li class="nav-item ml-2" id="create_survey_btn">
-	        <a class="nav-link" href="#">Создать опрос</a>
+	        <a class="nav-link text-light" href="#">Создать опрос</a>
 	      </li>
 	      <li class="nav-item">
 	      	<div class="row" id="search_menu_item">
@@ -43,73 +46,91 @@
 	      	<div class="col-md-12">
 			     	<ul class="nav nav-pills nav-stacked list_of_surveys">
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опросgggggggg</a>
+			         	<a class="nav-link text-light" href="#">Публичный опросgggggggg</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			       	<li class="nav-item">
-			         	<a class="nav-link" href="#">Публичный опрос</a>
+			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
 			       	</li>
 			     	</ul>
 					</div>
 	      </li>
 	      <li class="nav-item nav_item_menu_footer">
-	      	<a class="nav-link" id="info_menu_footer" href="#">Info</a>
+	      	<a class="nav-link text-light" id="info_menu_footer" href="#">Info</a>
 	      </li>
 	    </ul>
 	  </div>
 	</nav>
 
-	<div class="d">
-		
-	</div>
+	<!-- основной контент + конструктор -->
+	<!-- <div class="main_content">
+		<div class="survey_builder">
+
+			<div class="build_field bg-dark">
+				<h2 id="h_survey">Тема опроса</h2>
+				<h2 id="candidates">Варианты</h2>
+				<div id="candidates_inputs">
+					<div class="candidate_option">
+						<input type="text" placeholder="Имя кандидата">
+						<input type="text" placeholder="Оценка">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="castomaizer bg-dark">
+				
+			</div>
+		</div>
+	</div> -->
 
 	<!-- поля для входа и регистрации -->
 	<div id="field_login">
-		<div class="login_register_div bg-dark">
+		<div class="login_register_div bg-light">
 			<button id="close_btn">✕</button>
 			<div id="center">
 				<h2>Вход</h2>
@@ -141,8 +162,9 @@
 		</div>
 	</div>
 	
-	<script src="./src/login.js"></script>
-	<script src="./src/list.js"></script>
-	<script src="./src/menu.js"></script>
+	<script src="./static/src/login.js"></script>
+	<script src="./static/src/list.js"></script>
+	<script src="./static/src/menu.js"></script>
+	<script src="./static/src/builder.js"></script>
 </body>
 </html>

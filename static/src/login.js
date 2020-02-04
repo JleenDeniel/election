@@ -78,3 +78,26 @@ function do_able() {
 	document.getElementById('search_input').disabled = false;
 	document.getElementById('btn_search').disabled = false;
 }
+
+//отправка формы на сервер
+let login_form = document.querySelector("form");
+login_form.addEventListener('submit', form_send);
+function form_send(){
+	let form_data = {
+		"name": login_form.elements['email_input'].value,
+		"password": login_form.elements['password_input'].value
+	};
+	// let json_data = JSON.stringify(form_data);
+	
+	console.log(JSON.stringify(form_data));
+
+	// login_form.action = 'https://google.com/search';
+	// $.ajax({
+	//   url: 'localhost:5000/login',
+	//   type: 'post',
+	//   data: $data,
+	//   success: function(result) {
+	//     // действия при получения ответа (result) от сервера
+	//   }
+	// });
+}
