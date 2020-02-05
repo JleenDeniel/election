@@ -87,16 +87,22 @@ function form_send(){
 		"name": login_form.elements['email_input'].value,
 		"password": login_form.elements['password_input'].value
 	};
-	// let json_data = JSON.stringify(form_data);
-	
-	// console.log(JSON.stringify(form_data));
+	let json_data = JSON.stringify(form_data);
+}
 
-	// $.ajax({
-	//   url: 'http://localhost:3000/login',
-	//   type: 'post',
-	//   data: JSON.stringify(form_data),
-	//   success: function(result) {
-	//     // действия при получения ответа (result) от сервера
-	//   }
-	// });
+var xhr = new XMLHttpRequest();
+	xhr.open(
+		'GET', 
+		'https://localhost:5000/login', 
+		true
+	);
+xhr.send();
+
+xhr.onreadystatechange = function(){
+	if (xhr.readyState !== 4) return;
+	if (xhr.status === 200){
+		console.log('result', JSON.parse(xhr.responseText));
+	} else {
+		console.log('err', xhr.responseText);
+	}
 }

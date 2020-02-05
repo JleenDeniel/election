@@ -12,10 +12,11 @@ app.get("/", urlencodedParser, function (request, response) {
 });
 
 app.post("/login", urlencodedParser, function (request, response) {
-  if(!request.body) return response.sendStatus(400);
-  console.log(request.body);
-  response.send(`${request.body.userName} - ${request.body.userPassword}`);
+  if (!request.body) return response.sendStatus(400);
+  console.log(request.body.userName);
+  console.log(request.body.userPassword);
+  response.send();
 });
-  
+
 console.log(port);
 app.listen(port);
