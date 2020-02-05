@@ -13,7 +13,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" id="menu">
-	  <a class="navbar-brand text-light" href="#">ОПРОСЫ</a>
+	  <a class="navbar-brand text-light" href="#">Surveys</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 	  </button>
@@ -45,56 +45,11 @@
 	      <li class="nav-item" id="nav_list"> 
 	      	<div class="col-md-12">
 			     	<ul class="nav nav-pills nav-stacked list_of_surveys">
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опросgggggggg</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
 			     	</ul>
 					</div>
@@ -147,17 +102,17 @@
 	</div>
 
 	<div id="registration_field">
-		<div class="bg-dark register_div">
+		<div class="bg-light register_div">
 			<button id="close_btn_reg">✕</button>
 			<div id="center_reg">
 				<h2>Регистрация</h2>
-				<form action="" id="register_data">
-					<input type="text" placeholder="имя пользователя" id="username_nick">
-					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="kek">
-					<input type="password" placeholder="пароль" id="password_input_reg">
-					<input type="password" placeholder="подтвердите пароль" id="password_confirm">
+				<form action="/register" id="register_data" method="post">
+					<input type="text" placeholder="имя пользователя" id="username_nick" name="userName">
+					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="userEmail">
+					<input type="password" placeholder="пароль" id="password_input_reg" name="userPassword">
+					<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm">
 				</form>
-				<button type="submit" form="data_form" id="submit_btn_reg">Зарегистрироваться</button>
+				<button type="submit" form="register_data" id="submit_btn_reg">Зарегистрироваться</button>
 			</div>
 		</div>
 	</div>

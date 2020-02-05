@@ -3,15 +3,16 @@
 	width: 21%;
 	margin: 14% auto;
 	border-radius: 18px;
-	border: 1px solid firebrick;
+	border: 1px solid #007BFF;
 	opacity: 1;
 }
 
 .register_div h2{
 	text-align: center;
-	color: lightgray;
+	color: black;
 	margin-bottom: 14%;
 	margin-top: 5%;
+	margin-left: 7.5%;
 	font-weight: 100;
 }
 
@@ -24,7 +25,7 @@
 	font-size: 1.4rem;
 	border-radius: 10px;
 	font-weight: 100;
-	border: 0.9px solid firebrick;
+	border: 0.9px solid #007BFF;
 }
 
 #registration_login{
@@ -50,13 +51,13 @@
 	height: 50px;
 	font-size: 1.4rem;
 	border-radius: 23px;
-	background-color: firebrick;
+	background-color: #007BFF;
 	border: none;
-	color: lightgray;
+	color: white;
 }
 
 #submit_btn_reg:hover{
-	border: 0.5px solid grey;
+	border: 0.5px solid white;
 }
 
 #registration_field{

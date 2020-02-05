@@ -23,10 +23,9 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 350px;
+    width: 355px;
     height: calc(100vh - 3.5rem);
     margin-top: 3.5rem;
-    background: #343a40;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
   }
@@ -81,4 +80,8 @@ body{
 
 #btn_search{
   background-color: white;
+}
+
+#btn_search:hover{
+  background-color: #007BFF;
 }

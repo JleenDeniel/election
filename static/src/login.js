@@ -83,25 +83,25 @@ function do_able() {
 let login_form = document.querySelector("form");
 login_form.addEventListener('submit', form_send);
 function form_send(){
-	let form_data = {
-		"name": login_form.elements['email_input'].value,
-		"password": login_form.elements['password_input'].value
-	};
-	let json_data = JSON.stringify(form_data);
+	// let form_data = {
+	// 	"name": login_form.elements['email_input'].value,
+	// 	"password": login_form.elements['password_input'].value
+	// };
+	// let json_data = JSON.stringify(form_data);
 }
 
 var xhr = new XMLHttpRequest();
-	xhr.open(
-		'GET', 
-		'https://localhost:5000/login', 
-		true
-	);
+xhr.open(
+	'GET', 
+	'http://localhost:5000/login', 
+	true
+);
 xhr.send();
 
 xhr.onreadystatechange = function(){
 	if (xhr.readyState !== 4) return;
 	if (xhr.status === 200){
-		console.log('result', JSON.parse(xhr.responseText));
+		console.log('result', JSON.parse(xhr.responseText).bool);
 	} else {
 		console.log('err', xhr.responseText);
 	}
