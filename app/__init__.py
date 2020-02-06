@@ -1,10 +1,12 @@
 from flask import Flask, request, render_template, url_for, make_response, jsonify
 # from app.db import ConnectionToDB
 # import pymysql
+from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+CORS(app)
 db = SQLAlchemy(app)
 
 app.config.update(dict(
@@ -19,19 +21,19 @@ def home():
     return render_template('index.html')
 
 
+res = {'bool': 'false', 'username': ''}
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    res = {'action': 'login'}
     if request.method == 'POST':
         username = request.form.get('userName')
         password = request.form.get('userPassword')
-        # result = get_user(username, password)
         user = User.query.filter_by(email=username).first()
-        res['status'] = user.login
-        return jsonify(res)
+        res['username'] = user.login
+        res['bool'] = 'true'
+        return render_template('index.html')
     else:
-        res['status'] = 'get'
-        # return render_template('index.html')
         return jsonify(res)
 
 
@@ -57,6 +59,7 @@ class User(db.Model):
     login = db.Column(db.String(30))
     password = db.Column(db.String(255))
     email = db.Column(db.String(30))
+
 
 #
 # def get_user(username, password):
