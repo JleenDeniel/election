@@ -70,6 +70,18 @@ body{
   .nav_item_menu_footer{
     margin: 0 auto;
   }
+
+  #close_btn_logined{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 90%;
+    top: 0.5%;
+    background-color: rgba(0, 0, 0, 0.0);
+    float: right;
+    border: none;
+    color: white;
+    display: none;
+  }
 }
 
 .form-control:focus{

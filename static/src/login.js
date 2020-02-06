@@ -79,31 +79,9 @@ function do_able() {
 	document.getElementById('btn_search').disabled = false;
 }
 
-//проверка на валидность username и password
-$("#submit_btn").hover(function(){
-	// если строка состоит более чем из пяти символов и 
-	//не содержит пробелов и (состоит из английских букв и может содержать цифры)
-	if (($("#email_input").val().length > 5) && 
-			($("#email_input").val().split(' ').length - 1 == 0) &&
-			((/^[a-zA-Z]+$/.test($("#email_input").val())) || ($("#email_input").val().match(/^\d/))) && 
-			(!$("#email_input").val().match(/^\d+$/))) {
-
-		document.getElementById("submit_btn").disabled = false;
-		$("#email_input").css('border', '0.9px solid #007BFF');
-
-
-	} else {
-		//блокируем submit кнопку пока данные не пройдут легит чек
-		document.getElementById("submit_btn").disabled = true;
-		$("#email_input").css('border', '0.9px solid firebrick');
-	}
-	
-});
-
 //отправка get запроса за данными с сервера
 //существует ли такой пользователь в базе или нет
-//если да, то меняем вид страницы
-//если данные не сошлись, то проверяем на валидность или предлагаем зарегистрироваться
+let user_in_base_flag = false; //флаг отвечающий за проверку есть ли пользователь в базе
 var xhr = new XMLHttpRequest();
 xhr.open(
 	'GET', 
@@ -119,10 +97,16 @@ xhr.onreadystatechange = function(){
 
 		if (JSON.parse(xhr.responseText).bool){
 			$("#enter_link").html(JSON.parse(xhr.responseText).username);
+			user_in_base_flag = true;
 		} 
 
 	} else {
+		user_in_base_flag = false;
 		console.log('err', xhr.responseText);
 	}
 }
 
+//обработка клика на кнпку submit на форме
+$("#data_form").submit(function(){
+	alert(user_in_base_flag);
+});

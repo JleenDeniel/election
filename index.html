@@ -21,7 +21,8 @@
 	  <div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="navbar-nav ml-auto sidenav nav flex-column bg-primary" id="navAccordion">
 	      <li class="nav-item ml-2">
-	        <a class="nav-link text-light" href="#" id="enter_link">Войти</a>
+	        <a class="nav-link text-light" href="#" id="enter_link">Войти </a>
+	        <button id="close_btn_logined">✕</button>
 	      </li>
 	      <li class="nav-item ml-2">
 	        <a class="nav-link text-light" href="#" id="personal">Личный кабинет</a>
@@ -120,8 +121,8 @@
 			<div id="center">
 				<h2>Вход</h2>
 				<form action="/login" id="data_form" method="post">
-					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName">
-					<input type="password" placeholder="пароль" id="password_input" name="userPassword">
+					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}|^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+					<input type="password" placeholder="пароль" id="password_input" name="userPassword" required pattern="^(?=.{6,})(?=.*[a-zA-Z])(?!.*\s).*$" autocomplete="on">
 				</form>
 				<!-- нажимаешь на кнопку и данные передаются серверу -->
 				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
@@ -139,8 +140,8 @@
 				<form action="/register" id="register_data" method="post">
 					<input type="text" placeholder="имя пользователя" id="username_nick" name="userName">
 					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="userEmail">
-					<input type="password" placeholder="пароль" id="password_input_reg" name="userPassword">
-					<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm">
+					<input type="password" placeholder="пароль" id="password_input_reg" name="userPassword" autocomplete="on">
+					<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm" autocomplete="on">
 				</form>
 				<button type="submit" form="register_data" id="submit_btn_reg">Зарегистрироваться</button>
 			</div>
