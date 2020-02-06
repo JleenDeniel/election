@@ -1,0 +1,33 @@
+.list_of_surveys{
+	height: 62vh;
+	overflow-y: scroll;
+}
+
+.list_of_surveys::-webkit-scrollbar{ 
+	width: 0; 
+}
+
+#nav_list{
+  margin: 0 auto;
+	padding-bottom: 5%;
+	border-bottom: 2px solid white;
+	margin-top: 5%;
+}
+
+.list_item_block{
+	height: 100px;
+	width: 325px;
+	margin: 0 auto;
+	border: 0.8px solid white;
+	border-radius: 5px;
+	margin-bottom: 7%;
+}
+
+.list_item{
+	border-bottom: 0.8px solid white;
+}
+
+.item_theme{
+	font-size: 1.3rem;
+	width: 100%;
+}

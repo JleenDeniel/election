@@ -1,0 +1,102 @@
+.login_register_div{
+	height: 400px;
+	width: 20%;
+	margin: 14% auto;
+	border-radius: 18px;
+	border: 1px solid #007BFF;
+	opacity: 1;
+}
+
+.login_register_div h2{
+	text-align: center;
+	margin-left: 9.5%;
+	color: black;
+	margin-bottom: 16%;
+	font-weight: 100;
+}
+
+.login_register_div input{
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	margin-top: 4%;
+	padding: 1% 2%;
+	font-size: 1.4rem;
+	border-radius: 10px;
+	font-weight: 100;
+	border: 0.9px solid #007BFF;
+}
+
+#center{
+	position: relative;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+#submit_btn{
+	font-weight: 100;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	margin-top: 15%;
+	margin-bottom: 3%;
+	width: 80%;
+	height: 50px;
+	font-size: 1.4rem;
+	border-radius: 23px;
+	background-color: #007BFF;
+	border: none;
+	color: white;
+}
+
+#submit_btn:hover{
+	border: 0.5px solid white;
+}
+
+#field_login{
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+}
+
+.link_reg_forgot{
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	opacity: 0.9;
+}
+
+#forgot_password{
+	float: left;
+	margin: 4%;
+	font-weight: 100;
+}
+
+#registration{
+	float: right;
+	margin: 4%;
+	font-weight: 100;
+}
+
+.link_reg_forgot:hover{
+	text-decoration: none;
+	opacity: 1;
+	color: black;
+}
+
+#close_btn{
+	position: relative;
+	float: right;
+	background-color: rgba(0, 0, 0, 0); 
+	border: none;
+	margin-right: 4%;
+	margin-top: 2%;
+	padding: 0;
+	font-size: 1.5rem;
+}
