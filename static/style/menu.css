@@ -59,12 +59,12 @@ body{
   }
 
   #info_menu_footer{
-    color: lightgray;
-    opacity: 0.4;
+    color: white;
+    opacity: 0.8;
   }
 
   #info_menu_footer:hover{
-    color: white;
+    opacity: 1;
   }
 
   .nav_item_menu_footer{

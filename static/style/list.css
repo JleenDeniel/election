@@ -1,5 +1,5 @@
 .list_of_surveys{
-	height: 31vw;
+	height: 62vh;
 	overflow-y: scroll;
 }
 
@@ -19,7 +19,7 @@
 	width: 325px;
 	margin: 0 auto;
 	border: 0.8px solid white;
-	border-radius: 8px;
+	border-radius: 5px;
 	margin-bottom: 7%;
 }
 

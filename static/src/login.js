@@ -80,11 +80,24 @@ function do_able() {
 }
 
 //проверка на валидность username и password
-$("#email_input").focus(function(){
-	if ($(this).val() == "max") {
-		alert('kek');
-		jQuery(this).blur();
+$("#submit_btn").hover(function(){
+	// если строка состоит более чем из пяти символов и 
+	//не содержит пробелов и (состоит из английских букв и может содержать цифры)
+	if (($("#email_input").val().length > 5) && 
+			($("#email_input").val().split(' ').length - 1 == 0) &&
+			((/^[a-zA-Z]+$/.test($("#email_input").val())) || ($("#email_input").val().match(/^\d/))) && 
+			(!$("#email_input").val().match(/^\d+$/))) {
+
+		document.getElementById("submit_btn").disabled = false;
+		$("#email_input").css('border', '0.9px solid #007BFF');
+
+
+	} else {
+		//блокируем submit кнопку пока данные не пройдут легит чек
+		document.getElementById("submit_btn").disabled = true;
+		$("#email_input").css('border', '0.9px solid firebrick');
 	}
+	
 });
 
 //отправка get запроса за данными с сервера
