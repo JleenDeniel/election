@@ -23,10 +23,9 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 350px;
+    width: 355px;
     height: calc(100vh - 3.5rem);
     margin-top: 3.5rem;
-    background: #343a40;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
   }
@@ -46,7 +45,7 @@ body{
   .nav-item a{
     font-size: 1.4rem;
   }
-  
+
   #create_survey_btn{
     margin: 0;
     margin-bottom: 1%;
@@ -56,20 +55,32 @@ body{
   #search_menu_item{
     margin: 0 auto;
     padding: 5% 0;
-    border-top: 2px solid white; 
+    border-top: 2px solid white;
   }
 
   #info_menu_footer{
-    color: lightgray;
-    opacity: 0.4;
+    color: white;
+    opacity: 0.8;
   }
 
   #info_menu_footer:hover{
-    color: white;
+    opacity: 1;
   }
 
   .nav_item_menu_footer{
     margin: 0 auto;
+  }
+
+  #close_btn_logined{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 90%;
+    top: 0.5%;
+    background-color: rgba(0, 0, 0, 0.0);
+    float: right;
+    border: none;
+    color: white;
+    display: none;
   }
 }
 
@@ -81,4 +92,8 @@ body{
 
 #btn_search{
   background-color: white;
+}
+
+#btn_search:hover{
+  background-color: #007BFF;
 }

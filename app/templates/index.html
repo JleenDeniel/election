@@ -13,7 +13,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" id="menu">
-	  <a class="navbar-brand text-light" href="#">ОПРОСЫ</a>
+	  <a class="navbar-brand text-light" href="#">Surveys</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 	  </button>
@@ -21,7 +21,8 @@
 	  <div class="collapse navbar-collapse" id="navbarCollapse">
 	    <ul class="navbar-nav ml-auto sidenav nav flex-column bg-primary" id="navAccordion">
 	      <li class="nav-item ml-2">
-	        <a class="nav-link text-light" href="#" id="enter_link">Войти</a>
+	        <a class="nav-link text-light" href="#" id="enter_link">Войти </a>
+	        <button id="close_btn_logined">✕</button>
 	      </li>
 	      <li class="nav-item ml-2">
 	        <a class="nav-link text-light" href="#" id="personal">Личный кабинет</a>
@@ -42,59 +43,44 @@
     			</div>
 	      </li>
 	      <!-- список активных опросов -->
-	      <li class="nav-item" id="nav_list"> 
+	      <li class="nav-item" id="nav_list">
 	      	<div class="col-md-12">
 			     	<ul class="nav nav-pills nav-stacked list_of_surveys">
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опросgggggggg</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
-			       	</li>
-			       	<li class="nav-item">
-			         	<a class="nav-link text-light" href="#">Публичный опрос</a>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
 			       	</li>
 			     	</ul>
 					</div>
@@ -109,7 +95,6 @@
 	<!-- основной контент + конструктор -->
 	<!-- <div class="main_content">
 		<div class="survey_builder">
-
 			<div class="build_field bg-dark">
 				<h2 id="h_survey">Тема опроса</h2>
 				<h2 id="candidates">Варианты</h2>
@@ -117,13 +102,12 @@
 					<div class="candidate_option">
 						<input type="text" placeholder="Имя кандидата">
 						<input type="text" placeholder="Оценка">
-						
+
 					</div>
 				</div>
 			</div>
-
 			<div class="castomaizer bg-dark">
-				
+
 			</div>
 		</div>
 	</div> -->
@@ -135,8 +119,8 @@
 			<div id="center">
 				<h2>Вход</h2>
 				<form action="/login" id="data_form" method="post">
-					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName">
-					<input type="password" placeholder="пароль" id="password_input" name="userPassword">
+					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}|^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+					<input type="password" placeholder="пароль" id="password_input" name="userPassword" required pattern="^(?=.{6,})(?=.*[a-zA-Z])(?!.*\s).*$" autocomplete="on">
 				</form>
 				<!-- нажимаешь на кнопку и данные передаются серверу -->
 				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
@@ -147,28 +131,24 @@
 	</div>
 
 	<div id="registration_field">
-		<div class="bg-dark register_div">
+		<div class="bg-light register_div">
 			<button id="close_btn_reg">✕</button>
 			<div id="center_reg">
 				<h2>Регистрация</h2>
 				<form action="/register" id="register_data" method="post">
 					<input type="text" placeholder="имя пользователя" id="username_nick" name="userName">
-<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="userEmail">
-<input type="password" placeholder="пароль" id="password_input_reg" name="userPassword">
-<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm"></form>
+					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="userEmail">
+					<input type="password" placeholder="пароль" id="password_input_reg" name="userPassword" autocomplete="on">
+					<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm" autocomplete="on">
+				</form>
 				<button type="submit" form="register_data" id="submit_btn_reg">Зарегистрироваться</button>
 			</div>
 		</div>
 	</div>
-	
-<!--	<script src="{{url_for('static', filename='src/login.js')}}"></script>-->
-<!--	<script src="{{url_for('static', filename='src/list.js')}}"></script>-->
-<!--	<script src="{{url_for('static', filename='src/menu.js')}}"></script>-->
-<!--	<script src="{{url_for('static', filename='src/builder.js')}}"></script>-->
+
 	<script src="../static/src/login.js"></script>
 	<script src="../static/src/list.js"></script>
 	<script src="../static/src/menu.js"></script>
 	<script src="../static/src/builder.js"></script>
-
 </body>
 </html>
