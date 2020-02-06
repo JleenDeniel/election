@@ -1,0 +1,83 @@
+.register_div{
+	height: 440px;
+	width: 21%;
+	margin: 14% auto;
+	border-radius: 18px;
+	border: 1px solid firebrick;
+	opacity: 1;
+}
+
+.register_div h2{
+	text-align: center;
+	color: lightgray;
+	margin-bottom: 14%;
+	margin-top: 5%;
+	font-weight: 100;
+}
+
+.register_div input{
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	margin-top: 4%;
+	padding: 1% 2%;
+	font-size: 1.4rem;
+	border-radius: 10px;
+	font-weight: 100;
+	border: 0.9px solid firebrick;
+}
+
+#registration_login{
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+}
+
+#submit_btn_reg{
+	font-weight: 100;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	margin-top: 7%;
+	margin-bottom: 1%;
+	width: 80%;
+	height: 50px;
+	font-size: 1.4rem;
+	border-radius: 23px;
+	background-color: firebrick;
+	border: none;
+	color: lightgray;
+}
+
+#submit_btn_reg:hover{
+	border: 0.5px solid grey;
+}
+
+#registration_field{
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+}
+
+#close_btn_reg{
+	position: relative;
+	float: right;
+	background-color: rgba(0, 0, 0, 0); 
+	border: none;
+	margin-right: 4%;
+	margin-top: 2%;
+	padding: 0;
+	font-size: 1.5rem;
+}

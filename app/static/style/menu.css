@@ -1,0 +1,84 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-bottom: 4.5rem;
+}
+
+.nav-link:hover{
+  transition: all 0.4s;
+}
+
+.nav-link-collapse:after{
+  float: right;
+  content: '\f067';
+  font-family: 'FontAwesome';
+}
+
+@media (min-width: 992px){
+  .sidenav{
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: calc(100vh - 3.5rem);
+    margin-top: 3.5rem;
+    background: #343a40;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-expand-lg .sidenav{
+    flex-direction: column;
+  }
+
+  .content-wrapper{
+    margin-left: 230px;
+  }
+
+  .navbar-expand-lg{
+    opacity: 0.9;
+  }
+
+  .nav-item a{
+    font-size: 1.4rem;
+  }
+  
+  #create_survey_btn{
+    margin: 0;
+    margin-bottom: 1%;
+    height: 6%;
+  }
+
+  #search_menu_item{
+    margin: 0 auto;
+    padding: 5% 0;
+    border-top: 2px solid white; 
+  }
+
+  #info_menu_footer{
+    color: lightgray;
+    opacity: 0.4;
+  }
+
+  #info_menu_footer:hover{
+    color: white;
+  }
+
+  .nav_item_menu_footer{
+    margin: 0 auto;
+  }
+}
+
+.form-control:focus{
+  outline: 0 !important;
+  border-color: initial;
+  box-shadow: none;
+}
+
+#btn_search{
+  background-color: white;
+}
