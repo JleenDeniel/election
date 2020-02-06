@@ -79,17 +79,18 @@ function do_able() {
 	document.getElementById('btn_search').disabled = false;
 }
 
-//отправка формы на сервер
-let login_form = document.querySelector("form");
-login_form.addEventListener('submit', form_send);
-function form_send(){
-	// let form_data = {
-	// 	"name": login_form.elements['email_input'].value,
-	// 	"password": login_form.elements['password_input'].value
-	// };
-	// let json_data = JSON.stringify(form_data);
-}
+//проверка на валидность username и password
+$("#email_input").focus(function(){
+	if ($(this).val() == "max") {
+		alert('kek');
+		jQuery(this).blur();
+	}
+});
 
+//отправка get запроса за данными с сервера
+//существует ли такой пользователь в базе или нет
+//если да, то меняем вид страницы
+//если данные не сошлись, то проверяем на валидность или предлагаем зарегистрироваться
 var xhr = new XMLHttpRequest();
 xhr.open(
 	'GET', 
@@ -101,8 +102,14 @@ xhr.send();
 xhr.onreadystatechange = function(){
 	if (xhr.readyState !== 4) return;
 	if (xhr.status === 200){
-		console.log('result', JSON.parse(xhr.responseText).bool);
+		console.log('result: ', JSON.parse(xhr.responseText));
+
+		if (JSON.parse(xhr.responseText).bool){
+			$("#enter_link").html(JSON.parse(xhr.responseText).username);
+		} 
+
 	} else {
 		console.log('err', xhr.responseText);
 	}
 }
+

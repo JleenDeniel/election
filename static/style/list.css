@@ -1,5 +1,5 @@
 .list_of_surveys{
-	height: 620px;
+	height: 31vw;
 	overflow-y: scroll;
 }
 
@@ -11,6 +11,7 @@
   margin: 0 auto;
 	padding-bottom: 5%;
 	border-bottom: 2px solid white;
+	margin-top: 5%;
 }
 
 .list_item_block{
@@ -19,6 +20,7 @@
 	margin: 0 auto;
 	border: 0.8px solid white;
 	border-radius: 8px;
+	margin-bottom: 7%;
 }
 
 .list_item{
@@ -26,10 +28,6 @@
 }
 
 .item_theme{
-	margin-bottom: 40px;
 	font-size: 1.3rem;
-	/* font-weight: 200; */
-	/* margin-left: 2%; */
-	/* padding: 1%; */
 	width: 100%;
 }
