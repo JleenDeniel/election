@@ -1,6 +1,4 @@
-from flask import Flask, request, render_template, url_for, make_response, jsonify
-# from app.db import ConnectionToDB
-# import pymysql
+from flask import Flask, request, render_template, make_response, jsonify
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -21,37 +19,57 @@ def home():
     return render_template('index.html')
 
 
-res = {'bool': 'false', 'username': ''}
+res_login = {'bool': 'false', 'username': ''}
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form.get('userName')
-        password = request.form.get('userPassword')
-        user = User.query.filter_by(email=username).first()
-        res['username'] = user.login
-        res['bool'] = 'true'
+        password = generate_password_hash(request.form.get('userPassword'))
+        print(username)
+        if '@' in username:
+            user = User.query.filter_by(email=username, password=password).first()
+        else:
+            user = User.query.filter_by(login=username, password=password).first()
+        if user:
+            res_login['bool'] = 'true'
+            res_login['username'] = user.login
+        else:
+            res_login['bool'] = 'false'
         return render_template('index.html')
     else:
-        return jsonify(res)
+        return jsonify(res_login)
 
 
-# todo обработка формы регистрации
+# обработка формы регистрации, если введенный логин или почта уже существуют в бд, то в поле status
+# будет написано что именно
+res_register = {'bool': 'false', 'username': '', 'status': ''}
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
-        login = request.form.get('userName')
+        login_reg = request.form.get('userName')
         email = request.form.get('userEmail')
         password = generate_password_hash(request.form.get('userPassword'))
-        print(request.form)
-        res = reg_user(login, password, email)
-        return make_response(jsonify(result=res))
-    else:
+        if User.query.filter_by(login=login_reg).first():
+            res_register['bool'] = 'false'
+            res_register['status'] = 'login_exists'
+        elif User.query.filter_by(email=email).first():
+            res_register['bool'] = 'false'
+            res_register['status'] = 'email_exists'
+        else:
+            user = User(login=login_reg, email=email, password=password)
+            db.session.add(user)
+            db.session.commit()
+            res_register['bool'] = 'true'
+            res_register['username'] = login_reg
+
         return render_template('index.html')
+    else:
+        return jsonify(res_register)
 
-
-# connection = pymysql.connect('localhost', 'root', '1T0bms93g5gK', 'election')
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -61,29 +79,5 @@ class User(db.Model):
     email = db.Column(db.String(30))
 
 
-#
-# def get_user(username, password):
-#     login = ""
-#     with connection:
-#         cur = connection.cursor()
-#         cur.execute("Select login from users where email = %s and password = %s;", (username, password))
-#         print(cur.fetchone())
-#
-#         return login
-#
-#
-# def reg_user(username, password, email):
-#     with connection:
-#         cursor = connection.cursor()
-#         sql = "Insert into users(login, password, email) values(%s, %s, %s);"
-#         query = cursor.execute(sql, (username, password, email))
-#         connection.commit()
-#
-#         if query > 0:
-#             return "registered"
-#         else:
-#             return "not registered"
-
-
 if __name__ == "__main__":
-    app.run(Debug=True)
+    app.run()
