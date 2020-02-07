@@ -7,6 +7,8 @@ let registration_field = document.getElementById('registration_field');
 //показать окно входа при нажатии в меню на сылку "Войти"
 document.getElementById('enter_link').addEventListener('click', show_login_field);
 function show_login_field(){
+	$('#email_input').val(''); //чистит поле с username
+	$('#password_input').val(''); //чистим поле с паролем
 	do_disable();
 	field_login.style.display = 'block';
 }
@@ -70,7 +72,7 @@ function do_disable(){
 }
 
 //делает ссылки активными (nav-link)
-//делвет поле поиска активным вместе с кнопкой
+//делает поле поиска активным вместе с кнопкой
 function do_able() {
 	for (let i = 0; i < nav_link_arr.length; i++){
 		nav_link_arr[i].classList.remove('disabled');
@@ -79,49 +81,37 @@ function do_able() {
 	document.getElementById('btn_search').disabled = false;
 }
 
-//отправка get запроса за данными с сервера
+//отправка get запроса за данными login с сервера
 //существует ли такой пользователь в базе или нет
-//запрос проиходит при клике на кнопку авторизоваться
-var xhr = new XMLHttpRequest();
-xhr.open(
-	'GET', 
-	'http://localhost:5000/login', 
-	true
-);
-xhr.send();
-
-xhr.onload = function(){
-	let user_in_base_flag = false;
-	if (xhr.readyState !== 4) return;
-	if (xhr.status === 200){
-		console.log('result: ', JSON.parse(xhr.responseText)); 
-		//если пришел true, то пользователь есть в базе, логиним его, если false, то сообщаем 
-		//что такого пользователя нет, предоставляя форму входа повторно
-		if (JSON.parse(xhr.responseText).bool){
-			$("#enter_link").html(JSON.parse(xhr.responseText).username);
-			document.getElementById("#enter_link").innerHTML = JSON.parse(xhr.responseText).username;
+$.get(
+  'http://localhost:5000/login',
+  function(data) {              
+   	console.log(data);
+   	let login_value = data.username;
+   	if (data.bool){
+			$("#enter_link").html(data.username);
 			$("#close_btn_logined").css('display', 'block');
 		} else {
-			console.log('kek');
+			// show_login_field();
+			$('#email_input').val(login_value); //заполняем поле с username, если пользователя нет в базе (то что ввел пользователь)
 		}
-	} else {
-		user_in_base_flag = false;
-		console.log('err', xhr.responseText);
-	}
-}
+  }
+);
 
-@app.route('/login', methods=['GET', 'POST']) 
-def login(): 
-	res = {
-					'bool': 'false', 
-					'username': ''
-				} 
-	if request.method == 'POST': 
-		username = request.form.get('userName') 
-		password = request.form.get('userPassword') 
-		user = User.query.filter_by(email=username).first() 
-		res['username'] = user.login 
-		res['bool'] = 'true' 
-		return render_template('index.html') 
-	else:
-		return jsonify(res)
+// если при клике на кнопку в bool содержится false, то показать форму
+
+//отправка get запроса за данными Register c сервера
+//существует ли такой пользователь в базе или нет
+$.get(
+  'http://localhost:5000/register',
+  function(data) {              
+   	console.log(data);
+   	if (data.status == 'username_exists') {
+   		alert('Пользователь с таким ником уже есть');
+   	}
+
+   	if (data.status == 'email_exists') {
+   		alert('Пользователь с таким email уже есть');
+   	}
+  }
+);
