@@ -84,34 +84,36 @@ function do_able() {
 //отправка get запроса за данными login с сервера
 //существует ли такой пользователь в базе или нет
 $.get(
-  'http://localhost:5000/login',
-  function(data) {              
+  '/login',
+  function(data) {             
    	console.log(data);
    	let login_value = data.username;
    	if (data.bool){
 			$("#enter_link").html(data.username);
 			$("#close_btn_logined").css('display', 'block');
-		} else {
-			// show_login_field();
+		 } else {
 			$('#email_input').val(login_value); //заполняем поле с username, если пользователя нет в базе (то что ввел пользователь)
 		}
+		//прячем кнопку выхода из профиля, чистим данные
+		$('#close_btn_logined').click(function(){
+			$("#enter_link").html('Войти');
+			$('#close_btn_logined').css('display', 'none');;
+			data.bool = false;
+			data.username = '';
+			console.log(data);
+		});
   }
 );
-
-// если при клике на кнопку в bool содержится false, то показать форму
 
 //отправка get запроса за данными Register c сервера
 //существует ли такой пользователь в базе или нет
-$.get(
-  'http://localhost:5000/register',
-  function(data) {              
-   	console.log(data);
-   	if (data.status == 'username_exists') {
-   		alert('Пользователь с таким ником уже есть');
-   	}
 
-   	if (data.status == 'email_exists') {
-   		alert('Пользователь с таким email уже есть');
-   	}
-  }
-);
+$('#register_data').submit(function(){
+	$.get(
+  	'http://localhost:5000/register',
+  	function(data) {              
+   		console.log(data);
+   		alert('jj');
+  	}
+	);
+});

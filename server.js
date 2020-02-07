@@ -38,4 +38,22 @@ app.get("/login", urlencodedParser, function (request, response){
       "username": user 
     });
 });
-  
+
+app.post("/register", urlencodedParser, function (request, response){
+  if (!request.body) return response.sendStatus(400);
+  console.log(request.body);
+
+  if (request.body.userNameReg == "maxrusmos") bool = true;
+  else bool = false;
+
+  user = request.body.userNameReg;
+  response.sendFile(__dirname + "/index.html");
+});  
+
+app.get("/register", urlencodedParser, function (request, response){
+  response.send(
+    {
+      "bool": bool,
+      "username": "lol"
+    });
+});
