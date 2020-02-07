@@ -81,7 +81,7 @@ function do_able() {
 
 //отправка get запроса за данными с сервера
 //существует ли такой пользователь в базе или нет
-let user_in_base_flag = false; //флаг отвечающий за проверку есть ли пользователь в базе
+//запрос проиходит при клике на кнопку авторизоваться
 var xhr = new XMLHttpRequest();
 xhr.open(
 	'GET', 
@@ -90,23 +90,38 @@ xhr.open(
 );
 xhr.send();
 
-xhr.onreadystatechange = function(){
+xhr.onload = function(){
+	let user_in_base_flag = false;
 	if (xhr.readyState !== 4) return;
 	if (xhr.status === 200){
-		console.log('result: ', JSON.parse(xhr.responseText));
-
+		console.log('result: ', JSON.parse(xhr.responseText)); 
+		//если пришел true, то пользователь есть в базе, логиним его, если false, то сообщаем 
+		//что такого пользователя нет, предоставляя форму входа повторно
 		if (JSON.parse(xhr.responseText).bool){
 			$("#enter_link").html(JSON.parse(xhr.responseText).username);
-			user_in_base_flag = true;
-		} 
-
+			document.getElementById("#enter_link").innerHTML = JSON.parse(xhr.responseText).username;
+			$("#close_btn_logined").css('display', 'block');
+		} else {
+			console.log('kek');
+		}
 	} else {
 		user_in_base_flag = false;
 		console.log('err', xhr.responseText);
 	}
 }
 
-//обработка клика на кнпку submit на форме
-$("#data_form").submit(function(){
-	alert(user_in_base_flag);
-});
+@app.route('/login', methods=['GET', 'POST']) 
+def login(): 
+	res = {
+					'bool': 'false', 
+					'username': ''
+				} 
+	if request.method == 'POST': 
+		username = request.form.get('userName') 
+		password = request.form.get('userPassword') 
+		user = User.query.filter_by(email=username).first() 
+		res['username'] = user.login 
+		res['bool'] = 'true' 
+		return render_template('index.html') 
+	else:
+		return jsonify(res)
