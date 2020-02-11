@@ -69,6 +69,7 @@ function do_disable(){
 	}
 	document.getElementById('search_input').disabled = true;
 	document.getElementById('btn_search').disabled = true;
+	$('#menu').css('opacity', '0.3');
 }
 
 //делает ссылки активными (nav-link)
@@ -79,6 +80,7 @@ function do_able() {
 	} 
 	document.getElementById('search_input').disabled = false;
 	document.getElementById('btn_search').disabled = false;
+	$('#menu').css('opacity', '0.9');
 }
 
 //отправка get запроса за данными login с сервера
@@ -86,13 +88,13 @@ function do_able() {
 $.get(
   '/login',
   function(data) {             
-   	console.log(data);
+   	console.log(data); //вывод в консоль
    	let login_value = data.username;
    	if (data.bool){
 			$("#enter_link").html(data.username);
 			$("#close_btn_logined").css('display', 'block');
-		 } else {
-			$('#email_input').val(login_value); //заполняем поле с username, если пользователя нет в базе (то что ввел пользователь)
+		} else {
+			//действия при неправильном логине
 		}
 		//прячем кнопку выхода из профиля, чистим данные
 		$('#close_btn_logined').click(function(){
@@ -105,15 +107,17 @@ $.get(
   }
 );
 
+//проверять в поле регистрации совпадет ли пароль и его подтверждение
+
 //отправка get запроса за данными Register c сервера
 //существует ли такой пользователь в базе или нет
-
+//на нажатие кнопки зарегистрироваться
 $('#register_data').submit(function(){
 	$.get(
   	'http://localhost:5000/register',
-  	function(data) {              
-   		console.log(data);
-   		alert('jj');
+  	function(data){              
+   		console.log(data); //вывод в консоль
   	}
 	);
 });
+ 

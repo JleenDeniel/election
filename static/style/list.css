@@ -19,15 +19,16 @@
 	width: 325px;
 	margin: 0 auto;
 	border: 0.8px solid white;
-	border-radius: 5px;
+	border-radius: 3px;
 	margin-bottom: 7%;
+	background-color: #1990FF;
+	box-shadow: 0 0 5px 1.3px rgba(255, 255, 255, 0.4);
 }
 
-.list_item{
+.list_item{  
 	border-bottom: 0.8px solid white;
 }
 
 .item_theme{
-	font-size: 1.3rem;
-	width: 100%;
+	font-size: 1.4rem;
 }

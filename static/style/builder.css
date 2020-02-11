@@ -1,24 +1,90 @@
-.build_field{
-	display: inline-block;
-	height: 800px;
-	width: 1000px;
-	border: 2px solid firebrick;
-	margin: 6% auto 0 19%;
-	color: lightgray;
-	border-radius: 18px;
+.content{
+	margin-left: 400px;
+	margin-top: 5rem;
+	width: 50vw;
+	height: calc(100vh - 6rem);
+	border: 1.5px solid #007BFF;
+	border-radius: 10px;
+	padding: 2% 3.2%;
 }
 
-.build_field h2{
+.theme_field h2{
+	font-size: 3rem;
+	margin-bottom: 2%;
+}
+
+.answer_choice h2{
+	font-size: 2.5rem;
+	margin-bottom: 2%;
+}
+
+.theme_input{
+	height: 3rem;
+	border: 0.9px solid #007BFF;
+	width: 100%;
+	border-radius: 10px;
+	padding: 1.5% 2%;
+	margin-bottom: 4%;
+	font-size: 1.7rem;
+}
+
+.mark_your_choice{
+	width: 8%;
+	height: 3rem;
+	border-radius: 10px;
+	border: 0.9px solid #007BFF;
+	padding: 1.5%;
 	text-align: center;
+	font-size: 1.7rem;
+	margin-right: 5%;
 }
 
-.castomaizer{
-	height: 800px;
-	width: 420px;
+.name_of_choice{
+	width: 90%;
+	height: 3rem;
+	border-radius: 10px 10px 0 10px;
+	border: 0.9px solid #007BFF;
+	padding: 1.5%;
+	text-align: center;
+	font-size: 1.7rem;
+	margin-right: 5%;
+}
+
+.del_servey_choice{
+	height: 3rem;
+	font-size: 2.2rem;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: 0;
+}
+
+.choice{
+	margin-bottom: 4.3%;
+	/* display: inline-block;
+	width: 100%; */
+}
+
+.name_and_discription{
+	display: inline-block;
+	width: 80%;
+}
+
+.discription{
+	float: left;
+	margin-left: 60%;
+	font-size: 1.3rem;
+	border: 1px solid #007BFF;
+	border-top: none;
+	padding: 0 1%;
+	width: 30%;
+	border-radius: 0 0 10px 10px;
+}
+
+.discription .symbol_discription{
 	float: right;
-	left: 3%;
-	margin: 6% auto 0 3%;
-	margin-right: 3%;
-	border: 2px solid firebrick;
-	border-radius: 18px;
+	margin-right: 7%;
+}
+
+.discription .label_discription{
+	float: left;
+	margin-left: 8%;
 }

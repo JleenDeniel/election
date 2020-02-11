@@ -24,10 +24,11 @@ body{
     top: 0;
     left: 0;
     width: 355px;
-    height: calc(100vh - 3.5rem);
-    margin-top: 3.5rem;
+    height: calc(100vh - 4.2rem);
+    margin-top: 4.2rem;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0.4em 0.4em 5px rgba(0, 0, 0, 0.3);
   }
 
   .navbar-expand-lg .sidenav{
@@ -40,6 +41,8 @@ body{
 
   .navbar-expand-lg{
     opacity: 0.9;
+    height: 4.2rem;
+    box-shadow: 0.4em 0.4em 5px rgba(0, 0, 0, 0.3);
   }
 
   .nav-item a{
@@ -81,6 +84,18 @@ body{
     border: none;
     color: white;
     display: none;
+  }
+
+  #close_btn_logined:hover::after{
+    content: attr(data-title);
+    color: black;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 90%; top: 30%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 0.9rem; /* Размер текста подсказки */
+    width: 170px;
+    opacity: 0.8;
   }
 }
 

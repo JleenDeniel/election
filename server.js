@@ -54,6 +54,6 @@ app.get("/register", urlencodedParser, function (request, response){
   response.send(
     {
       "bool": bool,
-      "username": "lol"
+      "username": username
     });
 });
