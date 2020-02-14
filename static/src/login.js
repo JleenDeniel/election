@@ -99,7 +99,7 @@ $.get(
 		//прячем кнопку выхода из профиля, чистим данные
 		$('#close_btn_logined').click(function(){
 			$("#enter_link").html('Войти');
-			$('#close_btn_logined').css('display', 'none');;
+			$('#close_btn_logined').css('display', 'none');
 			data.bool = false;
 			data.username = '';
 			console.log(data);
