@@ -1,0 +1,114 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-bottom: 4.5rem;
+}
+
+.nav-link:hover{
+  transition: all 0.4s;
+}
+
+.nav-link-collapse:after{
+  float: right;
+  content: '\f067';
+  font-family: 'FontAwesome';
+}
+
+@media (min-width: 992px){
+  .sidenav{
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 355px;
+    height: calc(100vh - 4.2rem);
+    margin-top: 4.2rem;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0.4em 0.4em 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-expand-lg .sidenav{
+    flex-direction: column;
+  }
+
+  .content-wrapper{
+    margin-left: 230px;
+  }
+
+  .navbar-expand-lg{
+    opacity: 0.9;
+    height: 4.2rem;
+    box-shadow: 0.4em 0.4em 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-item a{
+    font-size: 1.4rem;
+  }
+  
+  #create_survey_btn{
+    margin: 0;
+    margin-bottom: 1%;
+    height: 6%;
+  }
+
+  #search_menu_item{
+    margin: 0 auto;
+    padding: 5% 0;
+    border-top: 2px solid white; 
+  }
+
+  #info_menu_footer{
+    color: white;
+    opacity: 0.8;
+  }
+
+  #info_menu_footer:hover{
+    opacity: 1;
+  }
+
+  .nav_item_menu_footer{
+    margin: 0 auto;
+  }
+
+  #close_btn_logined{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 90%;
+    top: 0.5%;
+    background-color: rgba(0, 0, 0, 0.0);
+    float: right;
+    border: none;
+    color: white;
+    display: none;
+  }
+
+  #close_btn_logined:hover::after{
+    content: attr(data-title);
+    color: black;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 90%; top: 30%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 0.9rem; /* Размер текста подсказки */
+    width: 170px;
+    opacity: 0.8;
+  }
+}
+
+.form-control:focus{
+  outline: 0 !important;
+  border-color: initial;
+  box-shadow: none;
+}
+
+#btn_search{
+  background-color: white;
+}
+
+#btn_search:hover{
+  background-color: #007BFF;
+}

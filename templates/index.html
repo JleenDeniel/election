@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Election</title>
+	<link rel="stylesheet" href="../static/style/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" id="menu">
+	  <a class="navbar-brand text-light" href="#"> YourVoice.ru</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarCollapse">
+	    <ul class="navbar-nav ml-auto sidenav nav flex-column bg-primary" id="navAccordion">
+	      <li class="nav-item ml-2">
+	        <a class="nav-link text-light" href="#" id="enter_link">Войти</a>
+	        <button id="close_btn_logined" data-title="Выйти из профиля">✕</button>
+	      </li>
+	      <li class="nav-item ml-2">
+	        <a class="nav-link text-light" href="#" id="personal">Личный кабинет</a>
+	      </li>
+	      <li class="nav-item ml-2" id="create_survey_btn">
+	        <a class="nav-link text-light" href="#">Создать опрос</a>
+	      </li>
+	      <li class="nav-item">
+	      	<div class="row" id="search_menu_item">
+		        <div class="input-group col-md-12">
+	            <input class="form-control py-2 border-right-0 border" type="search" value="search" id="search_input">
+	            <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border" id="btn_search" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+		        </div>
+    			</div>
+	      </li>
+	      <!-- список активных опросов -->
+	      <li class="nav-item" id="nav_list"> 
+	      	<div class="col-md-12">
+			     	<ul class="nav nav-pills nav-stacked list_of_surveys">
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			       	<li class="nav-item list_item_block">
+			         	<a class="nav-link list_item text-light" href="#">Название твоего опроса</a>
+			         	<div class="nav-link text-light">
+			         		<p class="item_theme">Тема твоего опроса</p>
+			         	</div>
+			       	</li>
+			     	</ul>
+					</div>
+	      </li>
+	      <li class="nav-item nav_item_menu_footer">
+	      	<!-- <a class="nav-link text-light" id="info_menu_footer" href="#">Info</a> -->
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<!-- основной контент + конструктор -->
+	<div class="main_content">
+		<div class="content">
+			<div class="survey_field">
+				<div class="theme_field">
+					<h2 class="display-4">Тема опроса</h2>
+					<input type="text" class="theme_input">
+				</div>
+				<div class="answer_choice">
+					<h2 class="display-4">Варианты ответов</h2>
+					<div class="choice">
+						<input type="text" class="mark_your_choice">
+						<div class="name_and_discription">
+							<input type="text" class="name_of_choice">
+							<div class="discription">
+								<span class="label_discription">описание</span>
+								<span class="symbol_discription">&#9660;</span>
+							</div>
+						</div>
+						<button class="del_servey_choice">✕</button>
+					</div>
+					<!-- <div class="choice">
+						<input type="text" class="mark_your_choice">
+						<input type="text" class="name_of_choice">
+						<button class="del_servey_choice">✕</button> -->
+						<!-- <div class="description">
+							<label>описание</label>
+						</div>
+					</div> -->
+					<!-- <div class="choice">
+						<input type="text" class="mark_your_choice">
+						<input type="text" class="name_of_choice">
+						<button class="del_servey_choice">✕</button> -->
+						<!-- <div class="description">
+							<label>описание</label>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- поля для входа и регистрации -->
+	<div id="field_login">
+		<div class="login_register_div bg-light">
+			<button id="close_btn">✕</button>
+			<div id="center">
+				<h2>Вход</h2>
+				<form action="/login" id="data_form" method="post">
+					<input type="text" placeholder="имя пользователя или email" id="email_input" name="userName" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}|^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+					<input type="password" placeholder="пароль" id="password_input" name="userPassword" required pattern="^(?=.{6,})(?=.*[a-zA-Z])(?!.*\s).*$" autocomplete="on">
+				</form>
+				<!-- нажимаешь на кнопку и данные передаются серверу -->
+				<button type="submit" form="data_form" id="submit_btn">Авторизоваться</button>
+				<a href="#" class="link_reg_forgot" id="forgot_password">Забыли пароль?</a>
+				<a href="#" class="link_reg_forgot" id="registration">Регистрация</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="registration_field">
+		<div class="bg-light register_div">
+			<button id="close_btn_reg">✕</button>
+			<div id="center_reg">
+				<h2>Регистрация</h2>
+				<form action="/register" id="register_data" method="post">
+					<input type="text" placeholder="имя пользователя" id="username_nick" name="userNameReg">
+					<input type="email" placeholder="example@mail.ru" id="email_input_reg" name="userEmailReg">
+					<input type="password" placeholder="пароль" id="password_input_reg" name="userPasswordReg" autocomplete="on">
+					<input type="password" placeholder="подтвердите пароль" id="password_confirm" name="userPasswordConfirm" autocomplete="on">
+				</form>
+				<button type="submit" form="register_data" id="submit_btn_reg">Зарегистрироваться</button>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../static/src/login.js"></script>
+	<script src="../static/src/list.js"></script>
+	<script src="../static/src/menu.js"></script>
+	<script src="../static/src/builder.js"></script>
+</body>
+</html>
