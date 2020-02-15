@@ -22,6 +22,7 @@ var bool = false;
 var user = '';
 app.post("/login", urlencodedParser, function (request, response){
   if (!request.body) return response.sendStatus(400);
+
   console.log(request.body);
 
   if (request.body.userName == "maxrusmos") bool = true;
@@ -29,6 +30,7 @@ app.post("/login", urlencodedParser, function (request, response){
 
   user = request.body.userName;
   response.sendFile(__dirname + "/index.html");
+  // response.send(request.body);
 });
 
 app.get("/login", urlencodedParser, function (request, response){

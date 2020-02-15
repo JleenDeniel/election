@@ -131,11 +131,10 @@
 }
 
 .description_textarea_photo{
-	margin-top: 100px;
-
-	display: none;
+	margin-top: 2%;
+	/* display: none; */
 	width: 85.5%;
-	height: 15rem;
+	height: 18rem;
 	border: 1px solid #007BFF;
 	padding: 3% 3% 3% 3%;
 	border-radius: 10px;
@@ -143,17 +142,49 @@
 
 .description_photo{
 	float: left;
-	width: 18.5%;
-	height: 12rem;
+	width: 30%;
+	height: 15rem;
+	border: 1px solid #007BFF;
+	border-radius: 2px;
+	background-image: url('../img/add_photo.png');
+	background-size: 75% 52%;
+	background-repeat: no-repeat;
+	background-position: 50% 85%;
+	text-align: center;
+}
+
+.description_photo label{
+	font-size: 1.6rem;
+	opacity: 0.6;
+	margin-top: 8%;
+}
+
+.description_photo:hover{
+	cursor: pointer;
 }
 
 .description_textarea{
 	float: left;
-	height: 12rem;
-	width: 79%;
+	height: 15rem;
+	width: 67%;
 	margin-left: 2%;
 	border: 0.9px solid #007BFF;
 	resize: none;
 	padding: 2%;
 	font-size: 1.3rem;
+	border-radius: 4px;
+}
+
+.inputfile{
+	background-color: rgba(0, 0, 0, 0);
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label:hover {
+    cursor: pointer;
 }
