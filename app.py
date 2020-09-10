@@ -14,7 +14,7 @@ app.config.update(dict(
     SECRET_KEY="powerful secret_key",
     WTF_CSRF_SECRET_KEY="a csrf secret key"
 ))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1T0bms93g5gK@localhost/election'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/election'
 
 
 @app.route('/')
